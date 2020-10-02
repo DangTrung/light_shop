@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <title>@yield('title') | Admin</title>
     <script src="/editor/ckeditor/ckeditor.js"></script>
-    <script src="/editor/ckfinder/ckfinder.js"></script>
 </head>
 
 <body>
@@ -62,7 +61,7 @@
                         </li>
                         <li class="list-unstyled py-1">
                             <a class="text-decoration-none text-dark font-weight-bold d-flex align-items-center py-2 px-3 Main_row_col-3_CateNav_a"
-                                href="">
+                                href="{{ route('product.index') }}">
                                 <i class="fas fa-box mr-2 Main_row_col-3_CateNav_a_i text-center text-primary"></i>
                                 <p class="m-0 Main_row_col-3_CateNav_a_p">PRODUCTS</p>
                             </a>

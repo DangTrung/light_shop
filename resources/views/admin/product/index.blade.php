@@ -35,32 +35,30 @@
                                 <span class="text-success font-weight-bold">$&nbsp</span>{{number_format($value->prod_price,2)}}
                             </td>
                             <td class="text-center" style="width: 230px;">
-                                <img src="backend/img/{{$value->prod_image}}" width="110px">
+                                <img src="{{ asset('/storage/'.$value->prod_image) }}" width="110px">
                             </td>
                             <td class="text-center" style="width: 140px;">{{$value->cate_name}}</td>
                             <td class="text-center d-flex flex-column justify-content-around">
-                                {{-- show --}}
-                                <form action="{{ route('product.show', $value->prod_id) }}" method="GET">
+
+                                {{-- <form action="{{ route('product.show', $value->prod_id) }}" method="GET">
                                     <button class="btn btn-primary mb-2">
                                         <i class="far fa-eye"></i>
                                     </button>
                                 </form>
 
-                                {{-- edit --}}
                                 <form action="{{ route('product.edit', $value->prod_id) }}" method="GET">
                                     <button class="btn btn-warning mb-2">
                                         <i class="fas fa-marker"></i>
                                     </button>
                                 </form>
 
-                                {{-- delete --}}
                                 <form action="{{ route('product.delete', $value->prod_id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
                                         <i class="fas fa-trash"></i>
                                     </button>
-                                </form>
+                                </form> --}}
                             </td>
                         </tr>
                         @endforeach

@@ -55,14 +55,15 @@ Route::group(['namespace' => 'Admin'], function () {
             });
         });
 
+        // PRODUCT
         Route::group(['prefix' => 'product'], function () {
-            Route::get('/', 'ProductController@getProduct')->name('product.index');
-            Route::post('/', 'ProductController@storeProduct')->name('product.store');
-            Route::get('/create', 'ProductController@createProduct')->name('product.create');
-            Route::get('/show/{id}', 'ProductController@showProduct')->name('product.show');
-            Route::post('/{id}', 'ProductController@updateProduct')->name('product.update');
-            Route::delete('/{id}', 'ProductController@deleteProduct')->name('product.delete');
-            Route::get('/{id}', 'ProductController@editProduct')->name('product.edit');
+            Route::get('/', 'ProductController@index')->name('product.index');
+            Route::post('/', 'ProductController@store')->name('product.store');
+            Route::get('/create', 'ProductController@create')->name('product.create');
+            // Route::get('/show/{id}', 'ProductController@show')->name('product.show');
+            // Route::post('/{id}', 'ProductController@update')->name('product.update');
+            // Route::delete('/{id}', 'ProductController@delete')->name('product.delete');
+            // Route::get('/{id}', 'ProductController@edit')->name('product.edit');
         });
     });
 });

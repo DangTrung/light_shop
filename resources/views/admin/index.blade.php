@@ -9,7 +9,7 @@
             </div>
             <div class="info ml-2">
                 <div class="number">
-                    <h2 class="m-0 font-weight-bold">10</h2>
+                    <h2 class="m-0 font-weight-bold">{{ $product }}</h2>
                 </div>
                 <div class="text">
                     <p class="m-0">Products</p>
@@ -21,7 +21,7 @@
     <div class="col-3 mb-3">
         <div class="items d-flex align-items-center border">
             <div class="icon p-4 bg-warning">
-                <i class="fas fa-comments fa-3x"></i>
+                <i class="fas fa-newspaper fa-3x"></i>
             </div>
             <div class="info ml-2">
                 <div class="number">
@@ -41,7 +41,7 @@
             </div>
             <div class="info ml-2">
                 <div class="number">
-                    <h2 class="m-0 font-weight-bold">20</h2>
+                    <h2 class="m-0 font-weight-bold">{{ $user }}</h2>
                 </div>
                 <div class="text">
                     <p class="m-0">Users</p>
@@ -57,7 +57,7 @@
             </div>
             <div class="info ml-2">
                 <div class="number">
-                    <h2 class="m-0 font-weight-bold">30</h2>
+                    <h2 class="m-0 font-weight-bold">{{ $category }}</h2>
                 </div>
                 <div class="text">
                     <p class="m-0">Categories</p>
