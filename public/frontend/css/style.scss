@@ -1,0 +1,162 @@
+* {
+    font-family: 'Bai Jamjuree', Poppins;
+}
+
+td {
+    word-break: break-all;
+}
+
+.font-small {
+    font-size: 14px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.bg-cream {
+    background-color: #6f593e;
+}
+
+.bg-lightwhite {
+    background-color: #edf1f5;
+}
+
+.bg-whitesmoke {
+    background-color: #d7d7db;
+}
+
+.text-only {
+    color: #8888b3;
+}
+
+.text-lightpurple {
+    color: #8888bd;
+}
+
+.text-lightpurple:hover {
+    color: #3232be;
+    font-weight: bold;
+}
+
+.btn-lightpurple {
+    background-color: #8888b3;
+    color: whitesmoke;
+}
+
+.btn-lightpurple:hover {
+    background-color: #4d4dbe;
+    color: whitesmoke;
+}
+
+// INDEX PAGE
+.Topbar {
+    &_row {
+        &_col-4 {
+            &_ul {
+                &_li {
+                    &_sub-menu {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-bar ul li:hover .sub-menu {
+    transition: all .5s;
+    display: block;
+    position: absolute;
+    z-index: 1000;
+}
+
+.Categories {
+    &_row {
+        &_col-4 {
+            &_col-12 {
+                &_input {
+                    width: 100%;
+                }
+
+                &_text {
+                    width: 50px;
+                    height: 50px;
+                    background-color: #8888b3;
+                    line-height: 45px;
+                    transform: translateX(-50%) rotate(45deg);
+                    border: 1px solid blueviolet;
+                    border-top-left-radius: 50%;
+                    border-top-right-radius: 50%;
+                    border-bottom-left-radius: 50%;
+                }
+
+                &_p {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.Products {
+    &_row {
+        &_col-4 {
+            &_badge {
+                width: 80px;
+                height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                border-radius: 50%;
+                position: absolute;
+                right: 0;
+                top: -15%;
+            }
+
+            &_product-top {
+                &_img {
+                    max-width: 100%;
+                    height: 250px;
+                }
+
+                &_overlay {
+                    opacity: 0;
+                    position: absolute;
+                    bottom: 30%;
+                }
+            }
+
+            &_product-top:hover .overlay {
+                opacity: 1;
+                margin-bottom: 10%;
+                transition: .5s;
+            }
+        }
+    }
+}
+
+// DASHBOARD PAGES
+.Main {
+    &_row {
+        &_col-3 {
+            &_CateNav {
+                &_a {
+                    &_i {
+                        width: 15%;
+                    }
+
+                    &_p {
+                        width: 85%;
+                    }
+                }
+
+                &_a:hover {
+                    border-left: 3px solid #8888b3;
+                    background-color: #d7d7db;
+                }
+            }
+        }
+    }
+}

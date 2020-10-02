@@ -1,0 +1,72 @@
+* {
+  font-family: 'Bai Jamjuree', Poppins;
+}
+
+td {
+  word-break: break-all;
+}
+
+.font-small {
+  font-size: 14px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.bg-lightwhite {
+  background-color: #edf1f5;
+}
+
+.bg-whitesmoke {
+  background-color: #d7d7db;
+}
+
+.text-only {
+  color: #8888b3;
+}
+
+.text-lightpurple {
+  color: #8888bd;
+}
+
+.text-lightpurple:hover {
+  color: #3232be;
+  font-weight: bold;
+}
+
+.btn-lightpurple {
+  background-color: #8888b3;
+  color: whitesmoke;
+}
+
+.btn-lightpurple:hover {
+  background-color: #4d4dbe;
+  color: whitesmoke;
+}
+
+.Topbar_row_col-4_ul_li_sub-menu {
+  display: none;
+}
+
+.menu-bar ul li:hover .sub-menu {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  display: block;
+  position: absolute;
+  z-index: 1000;
+}
+
+.Main_row_col-3_CateNav_a_i {
+  width: 15%;
+}
+
+.Main_row_col-3_CateNav_a_p {
+  width: 85%;
+}
+
+.Main_row_col-3_CateNav_a:hover {
+  border-left: 3px solid #8888b3;
+  background-color: #d7d7db;
+}
+/*# sourceMappingURL=style.css.map */

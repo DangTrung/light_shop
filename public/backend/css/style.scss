@@ -1,0 +1,92 @@
+* {
+    font-family: 'Bai Jamjuree', Poppins;
+}
+
+td {
+    word-break: break-all;
+}
+
+.font-small {
+    font-size: 14px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.bg-lightwhite {
+    background-color: #edf1f5;
+}
+
+.bg-whitesmoke {
+    background-color: #d7d7db;
+}
+
+.text-only {
+    color: #8888b3;
+}
+
+.text-lightpurple {
+    color: #8888bd;
+}
+
+.text-lightpurple:hover {
+    color: #3232be;
+    font-weight: bold;
+}
+
+.btn-lightpurple {
+    background-color: #8888b3;
+    color: whitesmoke;
+}
+
+.btn-lightpurple:hover {
+    background-color: #4d4dbe;
+    color: whitesmoke;
+}
+
+// INDEX PAGE
+.Topbar {
+    &_row {
+        &_col-4 {
+            &_ul {
+                &_li {
+                    &_sub-menu {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-bar ul li:hover .sub-menu {
+    transition: all .5s;
+    display: block;
+    position: absolute;
+    z-index: 1000;
+}
+
+// DASHBOARD PAGEs
+.Main {
+    &_row {
+        &_col-3 {
+            &_CateNav {
+                &_a {
+                    &_i {
+                        width: 15%;
+                    }
+
+                    &_p {
+                        width: 85%;
+                    }
+                }
+
+                &_a:hover {
+                    border-left: 3px solid #8888b3;
+                    background-color: #d7d7db;
+                }
+            }
+        }
+    }
+}
