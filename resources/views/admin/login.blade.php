@@ -19,6 +19,11 @@
             <div class="col-md-4 col-6 bg-dark m-auto py-5">
                 <h1 class="text-center text-only font-weight-bold mb-3">LOGIN</h1>
                 @include('error.note')
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <form action="{{ route('postLogin') }}" method="POST">
                     @csrf
                     <div class="form-group">

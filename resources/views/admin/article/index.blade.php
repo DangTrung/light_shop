@@ -46,8 +46,8 @@
                         @foreach ($articles as $value)
                         <tr>
                             <th class="text-center" style="width: 55px;">{{$value->art_id}}</th>
-                            <td class="text-center" style="width: 300px;">{{$value->art_title}}</td>
-                            <td class="text-center" style="width: 230px;">{{$value->art_description }}</td>
+                            <td class="text-center" style="width: 200px;">{{$value->art_title}}</td>
+                            <td class="text-center" style="width: 330px;">{{$value->art_description }}</td>
                             <td class="text-center" style="width: 140px;">{{$value->cate_name}}</td>
                             <td class="text-center d-flex flex-column justify-content-around">
                                 <form action="{{ route('article.show', $value->art_id) }}" method="GET">

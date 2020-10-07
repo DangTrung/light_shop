@@ -21,6 +21,6 @@ class RegisterController extends Controller
         $user->phone = $request->phone;
         $user->save();
 
-        return redirect()->route('getLogin');
+        return redirect()->route('getLogin')->with('success', 'Create account successfully');
     }
 }
