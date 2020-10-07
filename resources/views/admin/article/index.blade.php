@@ -1,16 +1,16 @@
 @extends('admin.master')
-@section('title', 'PRODUCT')
+@section('title', 'ARTICLE')
 @section('content')
 <div class="col-12">
     <div class="col-12 p-0">
         <ul class="list-group">
             <li class="list-group-item bg-whitesmoke">
                 <h5 class="m-0 font-weight-bold text-center text-uppercase">
-                    List Product
+                    List Article
                 </h5>
             </li>
             <li class="list-group-item">
-                <form action="{{ route('product.create') }}" method="get">
+                <form action="{{ route('article.create') }}" method="get">
                     <button class="btn btn-primary mb-2 font-weight-bold text-uppercase px-3">
                         Create
                     </button>
@@ -36,40 +36,33 @@
                     <thead class="thead-dark">
                         <tr>
                             <th class="text-uppercase text-center" scope="col">#</th>
-                            <th class="text-uppercase text-center" scope="col">name</th>
-                            <th class="text-uppercase text-center" scope="col">price</th>
-                            <th class="text-uppercase text-center" scope="col">image</th>
+                            <th class="text-uppercase text-center" scope="col">title</th>
+                            <th class="text-uppercase text-center" scope="col">description</th>
                             <th class="text-uppercase text-center" scope="col">category</th>
                             <th class="text-uppercase text-center" scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($products as $value)
+                        @foreach ($articles as $value)
                         <tr>
-                            <th class="text-center" style="width: 55px;">{{$value->prod_id}}</th>
-                            <td class="text-center" style="width: 300px;">{{$value->prod_name}}</td>
-                            <td class="text-center" style="width: 85px;">
-                                <span class="text-success font-weight-bold">$&nbsp</span>{{number_format($value->prod_price,2)}}
-                            </td>
-                            <td class="text-center" style="width: 230px;">
-                                <img src="{{ asset('/storage/'.$value->prod_image) }}" width="110px">
-                            </td>
+                            <th class="text-center" style="width: 55px;">{{$value->art_id}}</th>
+                            <td class="text-center" style="width: 300px;">{{$value->art_title}}</td>
+                            <td class="text-center" style="width: 230px;">{{$value->art_description }}</td>
                             <td class="text-center" style="width: 140px;">{{$value->cate_name}}</td>
                             <td class="text-center d-flex flex-column justify-content-around">
-
-                                <form action="{{ route('product.show', $value->prod_id) }}" method="GET">
+                                <form action="{{ route('article.show', $value->art_id) }}" method="GET">
                                     <button class="btn btn-primary mb-2">
                                         <i class="far fa-eye"></i>
                                     </button>
                                 </form>
 
-                                <form action="{{ route('product.edit', $value->prod_id) }}" method="GET">
+                                <form action="{{ route('article.edit', $value->art_id) }}" method="GET">
                                     <button class="btn btn-warning mb-2">
                                         <i class="fas fa-marker"></i>
                                     </button>
                                 </form>
 
-                                <form action="{{ route('product.delete', $value->prod_id) }}" method="POST">
+                                <form action="{{ route('article.delete', $value->art_id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')">

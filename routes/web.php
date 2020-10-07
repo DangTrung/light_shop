@@ -60,10 +60,21 @@ Route::group(['namespace' => 'Admin'], function () {
             Route::get('/', 'ProductController@index')->name('product.index');
             Route::post('/', 'ProductController@store')->name('product.store');
             Route::get('/create', 'ProductController@create')->name('product.create');
-            // Route::get('/show/{id}', 'ProductController@show')->name('product.show');
-            // Route::post('/{id}', 'ProductController@update')->name('product.update');
-            // Route::delete('/{id}', 'ProductController@delete')->name('product.delete');
-            // Route::get('/{id}', 'ProductController@edit')->name('product.edit');
+            Route::get('/show/{id}', 'ProductController@show')->name('product.show');
+            Route::post('/{id}', 'ProductController@update')->name('product.update');
+            Route::delete('/{id}', 'ProductController@delete')->name('product.delete');
+            Route::get('/{id}', 'ProductController@edit')->name('product.edit');
+        });
+
+        // ARTICLE
+        Route::group(['prefix' => 'article'], function () {
+            Route::get('/', 'ArticleController@index')->name('article.index');
+            Route::post('/', 'ArticleController@store')->name('article.store');
+            Route::get('/create', 'ArticleController@create')->name('article.create');
+            Route::get('/show/{id}', 'ArticleController@show')->name('article.show');
+            Route::post('/{id}', 'ArticleController@update')->name('article.update');
+            Route::delete('/{id}', 'ArticleController@delete')->name('article.delete');
+            Route::get('/{id}', 'ArticleController@edit')->name('article.edit');
         });
     });
 });
