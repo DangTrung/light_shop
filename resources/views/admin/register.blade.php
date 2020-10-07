@@ -45,6 +45,12 @@
                         </label>
                         <input type="text" class="form-control" name="phone">
                     </div>
+                    <div class="form-group d-none">
+                        <label class="text-uppercase text-only font-weight-bold">
+                            Role
+                        </label>
+                        <input type="text" class="form-control" name="role" value="3">
+                    </div>
                     <button type="submit" class="btn btn-lightpurple btn-block font-weight-bold text-uppercase mt-4">
                         SUBMIT
                     </button>

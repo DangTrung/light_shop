@@ -25,7 +25,7 @@
             </div>
             <div class="info ml-2">
                 <div class="number">
-                    <h2 class="m-0 font-weight-bold">50</h2>
+                    <h2 class="m-0 font-weight-bold">{{ $article }}</h2>
                 </div>
                 <div class="text">
                     <p class="m-0">Articles</p>

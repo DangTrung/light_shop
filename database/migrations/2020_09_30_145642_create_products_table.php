@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->Increments('prod_id');
             $table->string('prod_name');
             $table->integer('prod_price');
-            $table->string('prod_image');
+            $table->string('prod_image')->nullable();
             $table->string('prod_status');
             $table->text('prod_description');
             $table->string('prod_featured');

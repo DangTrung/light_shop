@@ -19,6 +19,7 @@ class RegisterController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->phone = $request->phone;
+        $user->role = $request->role;
         $user->save();
 
         return redirect()->route('getLogin')->with('success', 'Create account successfully');

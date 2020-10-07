@@ -32,7 +32,7 @@
                     <ul class="m-0 p-0" id="side-menu">
                         <li class="list-unstyled py-1">
                             <a class="text-decoration-none text-dark font-weight-bold d-flex align-items-center py-2 px-3 Main_row_col-3_CateNav_a"
-                                href="">
+                                href="{{ route('user.index') }}">
                                 <i class="fas fa-users mr-2 Main_row_col-3_CateNav_a_i text-center text-success"></i>
                                 <p class="m-0 Main_row_col-3_CateNav_a_p">USERS</p>
                             </a>

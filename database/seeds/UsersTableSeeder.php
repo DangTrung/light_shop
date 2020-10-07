@@ -16,7 +16,8 @@ class UsersTableSeeder extends Seeder
             'name'=>'Juy Hiu',
             'email'=>'admin@gmail.com',
             'password'=>bcrypt('hieudn19'),
-            'phone'=>'0703928702'
+            'phone'=>'0703928702',
+            'role'=>'1'
         ]);
     }
 }

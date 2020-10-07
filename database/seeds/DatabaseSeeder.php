@@ -1,5 +1,6 @@
 <?php
 
+use App\ProductCate;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
+        $this->call([
+            RolesTableSeeder::class,
+            UsersTableSeeder::class,
+            ProductCatesTableSeeder::class,
+            ArticleCatesTableSeeder::class,
+            ProductsTableSeeder::class
+        ]);
     }
 }

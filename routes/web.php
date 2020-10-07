@@ -55,6 +55,15 @@ Route::group(['namespace' => 'Admin'], function () {
             });
         });
 
+        // USER
+        Route::group(['prefix' => 'user'], function () {
+            Route::get('/', 'UserController@index')->name('user.index');
+            Route::get('/show/{id}', 'UserController@show')->name('user.show');
+            Route::post('/{id}', 'UserController@update')->name('user.update');
+            Route::delete('/{id}', 'UserController@delete')->name('user.delete');
+            Route::get('/{id}', 'UserController@edit')->name('user.edit');
+        });
+
         // PRODUCT
         Route::group(['prefix' => 'product'], function () {
             Route::get('/', 'ProductController@index')->name('product.index');
