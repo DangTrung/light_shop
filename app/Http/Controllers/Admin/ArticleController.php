@@ -61,11 +61,7 @@ class ArticleController extends Controller
         $art = Article::find($id);
         $image = request('image');
 
-        if ($image) {
-            $detinationPath = 'storage/' . $art->art_image;
-            if (file_exists($detinationPath)) {
-                unlink($detinationPath);
-            }
+        if ($art->art_image == null) {
             $imagePath = request('image')->store('uploads', 'public');
             $art->art_title = $request->title;
             $art->art_slug = Str::slug($request->title, '-');
@@ -74,11 +70,26 @@ class ArticleController extends Controller
             $art->art_content = $request->content;
             $art->art_cate = $request->categories;
         } else {
-            $art->art_title = $request->title;
-            $art->art_slug = Str::slug($request->title, '-');
-            $art->art_description = $request->description;
-            $art->art_content = $request->content;
-            $art->art_cate = $request->categories;
+            if ($image) {
+                $detinationPath = 'storage/' . $art->art_image;
+                if (file_exists($detinationPath)) {
+                    unlink($detinationPath);
+                }
+                $imagePath = request('image')->store('uploads', 'public');
+                $art->art_title = $request->title;
+                $art->art_slug = Str::slug($request->title, '-');
+                $art->art_image = $imagePath;
+                $art->art_description = $request->description;
+                $art->art_content = $request->content;
+                $art->art_cate = $request->categories;
+            } else {
+                $art->art_title = $request->title;
+                $art->art_slug = Str::slug($request->title, '-');
+                $art->art_description = $request->description;
+                $art->art_content = $request->content;
+                $art->art_cate = $request->categories;
+            }
+            $art->save();
         }
         $art->save();
 

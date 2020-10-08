@@ -11,7 +11,7 @@
     </div>
     <div class="col-9 mb-3">
         @include('error.note')
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('product.update', $prod->prod_id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label class="text-uppercase font-weight-bold">name</label>

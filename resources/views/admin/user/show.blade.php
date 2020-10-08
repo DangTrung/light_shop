@@ -13,18 +13,23 @@
         </div>
     </div>
 
+
+
     <div class="col-12 my-4 d-flex p-0">
         <div class="col-3 text-center">
-            <img src="{{ asset('/storage/'.$art_cate->art_image) }}" width="100%">
+            @if ($user->image == null)
+            <img id="avatar" class="img-thumbnail" src="backend/img/user.jpg" width="200px">
+            @else
+            <img id="avatar" class="img-thumbnail" src="{{ asset('/storage/'.$user->image) }}" width="200px">
+            @endif
             <div class="d-flex justify-content-center my-3">
-                <form action="{{route('article.edit', $art_cate->art_id)}}" method="GET">
+                <form action="{{route('user.edit', $user->id)}}" method="GET">
                     <button class="btn btn-warning mr-3">
                         <i class="fas fa-marker"></i>
                     </button>
                 </form>
 
-                {{-- delete --}}
-                <form action="{{route('article.delete', $art_cate->art_id)}}" method="POST">
+                <form action="{{route('user.delete', $user->id)}}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
@@ -35,51 +40,40 @@
         </div>
 
         <div class="col-9">
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th class="text-uppercase text-center" scope="col">Title</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-left">
-                            {{$art_cate->art_title}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th class="text-uppercase text-center" scope="col">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-left">
-                            {{$art_cate->art_description}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th class="text-uppercase text-center" scope="col">Content</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-left">
-                            {!! $art_cate->art_content !!}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="form-group d-flex align-items-center mb-3">
+                <div class="col-2 text-right">
+                    <label class="text-uppercase font-weight-bold m-0">name</label>
+                </div>
+                <div class="col-7">
+                    <input type="text" class="form-control" name="title" value="{{$user->name}}" disabled>
+                </div>
+            </div>
+            <div class="form-group d-flex align-items-center mb-3">
+                <div class="col-2 text-right">
+                    <label class="text-uppercase font-weight-bold m-0">email</label>
+                </div>
+                <div class="col-7">
+                    <input type="email" class="form-control" name="title" value="{{$user->email}}" disabled>
+                </div>
+            </div>
+            <div class="form-group d-flex align-items-center mb-3">
+                <div class="col-2 text-right">
+                    <label class="text-uppercase font-weight-bold m-0">phone</label>
+                </div>
+                <div class="col-7">
+                    <input type="text" class="form-control" name="title" value="{{$user->phone}}" disabled>
+                </div>
+            </div>
+            <div class="form-group d-flex align-items-center mb-3">
+                <div class="col-2 text-right">
+                    <label class="text-uppercase font-weight-bold m-0">role</label>
+                </div>
+                <div class="col-7">
+                    <input type="text" class="form-control" name="title" value="{{$user->role_name}}" disabled>
+                </div>
+            </div>
         </div>
     </div>
+
 </div>
 @endsection

@@ -61,11 +61,7 @@ class ProductController extends Controller
         $prod = Product::find($id);
         $image = request('image');
 
-        if ($image) {
-            $detinationPath = 'storage/' . $prod->prod_image;
-            if (file_exists($detinationPath)) {
-                unlink($detinationPath);
-            }
+        if ($prod->prod_image == null) {
             $imagePath = request('image')->store('uploads', 'public');
             $prod->prod_name = $request->name;
             $prod->prod_price = $request->price;
@@ -76,13 +72,30 @@ class ProductController extends Controller
             $prod->prod_discount = $request->discount;
             $prod->prod_cate = $request->categories;
         } else {
-            $prod->prod_name = $request->name;
-            $prod->prod_price = $request->price;
-            $prod->prod_status = $request->status;
-            $prod->prod_description = $request->description;
-            $prod->prod_featured = $request->featured;
-            $prod->prod_discount = $request->discount;
-            $prod->prod_cate = $request->categories;
+            if ($image) {
+                $detinationPath = 'storage/' . $prod->prod_image;
+                if (file_exists($detinationPath)) {
+                    unlink($detinationPath);
+                }
+                $imagePath = request('image')->store('uploads', 'public');
+                $prod->prod_name = $request->name;
+                $prod->prod_price = $request->price;
+                $prod->prod_image = $imagePath;
+                $prod->prod_status = $request->status;
+                $prod->prod_description = $request->description;
+                $prod->prod_featured = $request->featured;
+                $prod->prod_discount = $request->discount;
+                $prod->prod_cate = $request->categories;
+            } else {
+                $prod->prod_name = $request->name;
+                $prod->prod_price = $request->price;
+                $prod->prod_status = $request->status;
+                $prod->prod_description = $request->description;
+                $prod->prod_featured = $request->featured;
+                $prod->prod_discount = $request->discount;
+                $prod->prod_cate = $request->categories;
+            }
+            $prod->save();
         }
         $prod->save();
 

@@ -61,19 +61,13 @@
                                 @endif
                             </td>
                             <td class="text-center d-flex flex-column justify-content-around">
-                                <form action="{{ route('article.show', $value->id) }}" method="GET">
+                                <form action="{{ route('user.show', $value->id) }}" method="GET">
                                     <button class="btn btn-primary mb-2">
                                         <i class="far fa-eye"></i>
                                     </button>
                                 </form>
 
-                                <form action="{{ route('article.edit', $value->id) }}" method="GET">
-                                    <button class="btn btn-warning mb-2">
-                                        <i class="fas fa-marker"></i>
-                                    </button>
-                                </form>
-
-                                <form action="{{ route('article.delete', $value->id) }}" method="POST">
+                                <form action="{{ route('user.delete', $value->id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
