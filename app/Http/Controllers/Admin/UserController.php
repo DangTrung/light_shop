@@ -67,6 +67,13 @@ class UserController extends Controller
     }
 
     public function delete($id) {
+        $user = User::find($id);
+        $detinationPath = 'storage/' . $user->image;
+        if (file_exists($detinationPath)) {
+            unlink($detinationPath);
+        }
+        $user->delete();
 
+        return redirect()->route('user.index')->with('delete', 'Delete Data Successfully');
     }
 }

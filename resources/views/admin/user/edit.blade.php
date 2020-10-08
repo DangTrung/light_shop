@@ -19,7 +19,7 @@
                 @else
                 <img id="avatar" class="img-thumbnail" src="{{ asset('/storage/'.$user->image) }}" width="200px">
                 @endif
-                <input type="file" class="form-control-file hidden" name="image" onchange="changeImg(this)">
+                <input type="file" class="form-control-file hidden" name="image" onchange="changeImg(this)" required>
             </div>
             <div class="form-group d-flex align-items-center mb-3">
                 <div class="col-2 text-right">
