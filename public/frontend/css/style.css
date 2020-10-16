@@ -10,6 +10,14 @@ td {
   font-size: 14px;
 }
 
+.font-lg {
+  font-size: 60px;
+}
+
+.border-b {
+  border-bottom: 3px solid #8888b3;
+}
+
 .cursor {
   cursor: pointer;
 }
@@ -132,5 +140,92 @@ td {
 .Main_row_col-3_CateNav_a:hover {
   border-left: 3px solid #8888b3;
   background-color: #d7d7db;
+}
+
+.Product_row_col-12_img_pic {
+  max-width: 100%;
+  height: 350px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.Product_row_col-12_img_pic:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.Recommended_row_col-4_img {
+  max-width: 100%;
+  height: 350px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.Recommended_row_col-4_btn {
+  opacity: 0;
+  -webkit-transform: translateY();
+          transform: translateY();
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.col-4:hover .img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.col-4:hover .btn {
+  opacity: 1;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.Banner_row_col-12_img {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.Banner_row_col-12_content_img-1 {
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+}
+
+.Banner_row_col-12_content_img-2 {
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+}
+
+.Banner_row_col-12_img {
+  width: 100%;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
+.Content_row_col-12_img {
+  width: 100%;
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+}
+
+.Content_row_col-12_table_product_img {
+  width: 30%;
+}
+
+.Content_row_col-12_table_product_img_pic {
+  max-width: 100%;
+  height: 100px;
+}
+
+.Content_row_col-12_table_product_info {
+  width: 70%;
+  text-align: left;
 }
 /*# sourceMappingURL=style.css.map */

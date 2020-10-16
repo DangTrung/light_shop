@@ -5,22 +5,12 @@
             <h5 class="font-weight-bold text-only m-0 ml-4">CATEGORIES</h5>
         </div>
         <ul class="p-0 ml-2 my-3">
+            @foreach ($prod_cate as $item)
             <li class="list-unstyled py-2 text-secondary">
                 <i class="fas fa-angle-right mr-2"></i>
-                <a class="text-decoration-none text-lightpurple text-uppercase" href="">Lucky Goat</a>
+            <a class="text-decoration-none text-lightpurple text-uppercase" href="{{ route('home.prodcategory', [$item->cate_id, $item->cate_name]) }}">{{$item->cate_name}}</a>
             </li>
-            <li class="list-unstyled py-2 text-secondary">
-                <i class="fas fa-angle-right mr-2"></i>
-                <a class="text-decoration-none text-lightpurple text-uppercase" href="">Peet's</a>
-            </li>
-            <li class="list-unstyled py-2 text-secondary">
-                <i class="fas fa-angle-right mr-2"></i>
-                <a class="text-decoration-none text-lightpurple text-uppercase" href="">Metropolis</a>
-            </li>
-            <li class="list-unstyled py-2 text-secondary">
-                <i class="fas fa-angle-right mr-2"></i>
-                <a class="text-decoration-none text-lightpurple text-uppercase" href="">Nicaragua</a>
-            </li>
+            @endforeach
         </ul>
     </div>
 

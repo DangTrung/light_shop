@@ -13,6 +13,17 @@
 
 // HOMEPAGE
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about')->name('home.about');
+Route::get('/contact', 'HomeController@contact')->name('home.contact');
+Route::group(['prefix' => 'product'], function () {
+    Route::get('/detail/{id}', 'HomeController@detail')->name('home.proddetail');
+    Route::get('/category/{id}/{name}', 'HomeController@category')->name('home.prodcategory');
+});
+Route::group(['prefix' => 'cart'], function () {
+    Route::get('/', 'CartController@show')->name('cart.show');
+    Route::get('/add/{id}', 'CartController@add')->name('cart.add');
+    Route::get('/{id}', 'CartController@delete')->name('cart.delete');
+});
 
 // ADMIN
 Route::group(['namespace' => 'Admin'], function () {

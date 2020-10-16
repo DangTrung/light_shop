@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <base href="{{asset('')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontend/css/animate/animate.min.css">
     <link rel="stylesheet" href="frontend/css/bootstrap.min.css">
     <link rel="stylesheet" href="frontend/css/style.css">
     <link rel="shortcut icon" href="frontend/img/favicon.jpg" type="image/x-icon">
@@ -16,17 +17,8 @@
 <body class="bg-lightwhite">
 
     @include('layouts.header')
-    
-    @include('layouts.slide')
 
-    <!-- content -->
-    <div class="container Content">
-        <div class="row my-5">
-            @include('layouts.categories')
-
-            @section('content') @show
-        </div>
-    </div>
+    @section('content') @show
 
     @include('layouts.footer')
 

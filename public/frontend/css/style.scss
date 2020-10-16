@@ -10,6 +10,14 @@ td {
     font-size: 14px;
 }
 
+.font-lg {
+    font-size: 60px;
+}
+
+.border-b {
+    border-bottom: 3px solid #8888b3;
+}
+
 .cursor {
     cursor: pointer;
 }
@@ -155,6 +163,136 @@ td {
                 &_a:hover {
                     border-left: 3px solid #8888b3;
                     background-color: #d7d7db;
+                }
+            }
+        }
+    }
+}
+
+// DETAIL
+.Product {
+    &_row {
+        &_col-12 {
+            &_img {
+                &_pic {
+                    max-width: 100%;
+                    height: 350px;
+                    transition: all .5s;
+                }
+
+                &_pic:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+.Recommended {
+    &_row {
+        &_col-4 {
+            &_img {
+                max-width: 100%;
+                height: 350px;
+                transition: all .5s;
+            }
+
+            &_btn {
+                opacity: 0;
+                transform: translateY();
+                transition: all .6s ease;
+            }
+        }
+    }
+}
+
+.col-4:hover .img {
+    transform: scale(1.1);
+}
+
+.col-4:hover .btn {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+// ABOUT US
+.Banner {
+    &_row {
+        &_col-12 {
+            &_img {
+                width: 100%;
+                height: 250px;
+                background-size: cover;
+                background-position: bottom;
+            }
+        }
+
+        &_col-12 {
+            &_content {
+                &_img-1 {
+                    width: 100%;
+                    height: 350px;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                &_img-2 {
+                    width: 100%;
+                    height: 350px;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }  
+        }
+    }
+}
+
+// CONTACT US
+.Banner {
+    &_row {
+        &_col-12 {
+            &_img {
+                width: 100%;
+                height: 250px;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.Content {
+    &_row {
+        &_col-12 {
+            &_img {
+                width: 100%;
+                height: 600px;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+// CART
+.Content {
+    &_row {
+        &_col-12 {
+            &_table {
+                &_product {
+                    &_img {
+                        width: 30%;
+
+                        &_pic {
+                            max-width: 100%;
+                            height: 100px;
+                        }
+                    }
+
+                    &_info {
+                        width: 70%;
+                        text-align: left;
+                    }
                 }
             }
         }
