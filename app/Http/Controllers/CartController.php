@@ -9,7 +9,9 @@ class CartController extends Controller
 {
     public function show() {
         $total = Cart::total();
-        $subtotal = Cart::subtotal();
+        $discount = Cart::discount();
+        $subtotal = Cart::subtotal()*(100-$discount)/100;
+        
         $tax = Cart::tax();
         $cart = Cart::content();
 
@@ -21,7 +23,8 @@ class CartController extends Controller
 
         $data['id'] = $prod->prod_id;
         $data['name'] = $prod->prod_name;
-        $data['qty'] = '1';
+        $data['qty'] = $prod->prod_quantity;
+        $data['weight'] = '1';
         $data['price'] = $prod->prod_price;
         $data['options']['image'] = $prod->prod_image;
         $data['options']['discount'] = $prod->prod_discount;

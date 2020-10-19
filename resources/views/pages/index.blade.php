@@ -51,12 +51,20 @@
                         <a class="btn btn-lightpurple my-2 rounded-0" href="{{ route('home.proddetail', $item->prod_id) }}">
                             <i class="fas fa-eye"></i>
                         </a>
+
                         <a class="btn btn-lightpurple my-2 rounded-0" href="">
                             <i class="fas fa-star"></i>
                         </a>
+                        
+                        @if ($item->prod_quantity > 0)
                         <a class="btn btn-lightpurple my-2 rounded-0" href="{{ route('cart.add', $item->prod_id) }}">
                             <i class="fas fa-shopping-bag"></i>
-                        </a>
+                        </a>    
+                        @else
+                        <a class="btn btn-lightpurple my-2 rounded-0 d-none" href="{{ route('cart.add', $item->prod_id) }}">
+                            <i class="fas fa-shopping-bag"></i>
+                        </a>     
+                        @endif
                     </div>
                 </div>
                 <div class="product-bottom text-center mt-4">
@@ -92,16 +100,23 @@
                         src="{{ asset('/storage/'.$item->prod_image) }}">
                     <div
                         class="overlay Products_row_col-4_product-top_overlay d-flex flex-column justify-content-center">
-                        <a class="btn btn-lightpurple my-2 rounded-0" href="">
+                        <a class="btn btn-lightpurple my-2 rounded-0" href="{{ route('home.proddetail', $item->prod_id) }}">
                             <i class="fas fa-eye"></i>
                         </a>
 
                         <a class="btn btn-lightpurple my-2 rounded-0" href="">
                             <i class="fas fa-star"></i>
                         </a>
+
+                        @if ($item->prod_quantity > 0)
                         <a class="btn btn-lightpurple my-2 rounded-0" href="{{ route('cart.add', $item->prod_id) }}">
                             <i class="fas fa-shopping-bag"></i>
-                        </a>
+                        </a>    
+                        @else
+                        <a class="btn btn-lightpurple my-2 rounded-0 d-none" href="{{ route('cart.add', $item->prod_id) }}">
+                            <i class="fas fa-shopping-bag"></i>
+                        </a>     
+                        @endif 
                     </div>
                 </div>
                 <div class="product-bottom text-center mt-4">

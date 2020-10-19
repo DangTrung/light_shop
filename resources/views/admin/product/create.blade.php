@@ -36,11 +36,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label class="text-uppercase font-weight-bold">status</label>
-                <select class="form-control font-weight-bold text-danger" name="status" required>
-                    <option value="available">Available</option>
-                    <option value="out of stock">Out of stock</option>
-                </select>
+                <label class="text-uppercase font-weight-bold">quantity</label>
+                <input type="number" class="form-control" name="quantity" required>
             </div>
             <div class="form-group">
                 <label class="text-uppercase font-weight-bold">description</label>

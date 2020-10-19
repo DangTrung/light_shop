@@ -25,11 +25,10 @@
             <h5 class="font-weight-bold text-primary"></h5>
             <img src="{{ asset('/storage/'.$prod_cate->prod_image) }}" width="100%">
             <h5 class="font-weight-bold">{{$prod_cate->prod_name}}</h5>
-            <h5 class="font-weight-bold text-danger">
+            <h5 class="font-weight-bold text-success">
                 <span>$&nbsp{{number_format($prod_cate->prod_price,2)}}</span>
             </h5>
-            <span class="badge badge-danger text-uppercase">{{$prod_cate->prod_status}}</span>
-            <span class="badge badge-success">{{$prod_cate->prod_discount}}%</span>
+            <span class="badge badge-danger">{{$prod_cate->prod_discount}}%</span>
             <span class="badge badge-primary text-uppercase">
                 @if ($prod_cate->prod_featured=='yes')
                 featured

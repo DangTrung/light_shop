@@ -107,7 +107,7 @@
             <h4 class="m-0 font-weight-bold text-secondary border-bottom p-3">CART TOTALS</h4>
             <div class="total d-flex justify-content-between align-items-center p-3 border-bottom">
                 <h5 class="m-0 text-secondary font-weight-bold">SUBTOTAL</h5>
-                <h5 class="m-0 text-success font-weight-bold">$&nbsp{{ $subtotal }}</h5>
+                <h5 class="m-0 text-success font-weight-bold">$&nbsp{{ number_format($subtotal, 2) }}</h5>
             </div>
             <div class="total d-flex justify-content-between align-items-center p-3 border-bottom">
                 <h5 class="m-0 text-secondary font-weight-bold">TAX</h5>

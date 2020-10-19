@@ -22,12 +22,21 @@
                     <h4 class="price text-danger font-weight-bold">$&nbsp{{number_format($money, 2)}}</h4>
                 </div>
                 @endif
+                @if ($prod->prod_quantity > 0)
+                <h6 class="font-weight-bold text-uppercase">status: 
+                    <span class="text-primary">Available</span>
+                </h6>
                 <input type="number" name="qty" value="1" step="1" min="1" max="" size="5"
                     class="text-only text-center bg-none p-2 font-weight-bold">
                 <a class="btn btn-lightpurple py-2 rounded-0 font-weight-bold ml-3"
                     href="{{ route('cart.add', $prod->prod_id) }}">
                     ADD TO CART
-                </a>
+                </a>  
+                @else
+                <h6 class="font-weight-bold text-uppercase">status: 
+                    <span class="text-danger">Out of stock</span>
+                </h6>
+                @endif 
                 <p class="description text-danger mt-5">
                     {!! $prod->prod_description !!}
                 </p>

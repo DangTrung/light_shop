@@ -7,7 +7,6 @@ use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Product;
 use App\ProductCate;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
@@ -32,7 +31,7 @@ class ProductController extends Controller
         $prod->prod_name = $request->name;
         $prod->prod_price = $request->price;
         $prod->prod_image = $imagePath;
-        $prod->prod_status = $request->status;
+        $prod->prod_quantity = $request->quantity;
         $prod->prod_description = $request->description;
         $prod->prod_featured = $request->featured;
         $prod->prod_discount = $request->discount;
@@ -66,7 +65,7 @@ class ProductController extends Controller
             $prod->prod_name = $request->name;
             $prod->prod_price = $request->price;
             $prod->prod_image = $imagePath;
-            $prod->prod_status = $request->status;
+            $prod->prod_quantity = $request->quantity;
             $prod->prod_description = $request->description;
             $prod->prod_featured = $request->featured;
             $prod->prod_discount = $request->discount;
@@ -81,7 +80,7 @@ class ProductController extends Controller
                 $prod->prod_name = $request->name;
                 $prod->prod_price = $request->price;
                 $prod->prod_image = $imagePath;
-                $prod->prod_status = $request->status;
+                $prod->prod_quantity = $request->quantity;
                 $prod->prod_description = $request->description;
                 $prod->prod_featured = $request->featured;
                 $prod->prod_discount = $request->discount;
@@ -89,7 +88,7 @@ class ProductController extends Controller
             } else {
                 $prod->prod_name = $request->name;
                 $prod->prod_price = $request->price;
-                $prod->prod_status = $request->status;
+                $prod->prod_quantity = $request->quantity;
                 $prod->prod_description = $request->description;
                 $prod->prod_featured = $request->featured;
                 $prod->prod_discount = $request->discount;

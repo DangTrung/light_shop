@@ -58,7 +58,7 @@
                 </li>
                 @if (Route::has('getLogin'))
                 @auth
-                @if (Auth::user()->role == 1)
+                @if (Auth::user()->role == 1 || Auth::user()->role == 2)
                 <li class="list-unstyled">
                     <a class="d-flex align-items-center text-decoration-none text-lightpurple"
                         href="{{ route('dashboard') }}">

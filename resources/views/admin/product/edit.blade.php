@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label class="text-uppercase font-weight-bold">price</label>
-                <input type="number" class="form-control" name="price" value="{{$prod->prod_price}}" required>
+                <input type="number" class="form-control" name="price" min="0" value="{{$prod->prod_price}}" required>
             </div>
             <div class="form-group">
                 <label class="text-uppercase font-weight-bold">image</label>
@@ -44,15 +44,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label class="text-uppercase font-weight-bold">status</label>
-                <select class="form-control font-weight-bold text-danger" name="status" required>
-                    <option value="available" @if ($prod->prod_status=='available') selected @endif>
-                        Available
-                    </option>
-                    <option value="out of stock" @if ($prod->prod_status=='out of stock') selected @endif>
-                        Out of stock
-                    </option>
-                </select>
+                <label class="text-uppercase font-weight-bold">quantity</label>
+                <input type="number" class="form-control font-weight-bold text-success" name="quantity" min="0" value="{{$prod->prod_quantity}}" required>
             </div>
             <div class="form-group">
                 <label class="text-uppercase font-weight-bold">description</label>

@@ -37,6 +37,8 @@
                                 <p class="m-0 Main_row_col-3_CateNav_a_p">USERS</p>
                             </a>
                         </li>
+                        @auth
+                        @if (Auth::user()->role == 1)
                         <li class="list-unstyled py-1">
                             <a class="text-decoration-none text-dark font-weight-bold d-flex align-items-center py-2 px-3 Main_row_col-3_CateNav_a"
                                 data-toggle="collapse" href="#collapseExample" role="button">
@@ -57,8 +59,11 @@
                                     <p class="m-0 Main_row_col-3_CateNav_a_p">ARTICLE</p>
                                 </a>
                             </div>
-
-                        </li>
+                        </li>    
+                        @else
+   
+                        @endif
+                        @endauth
                         <li class="list-unstyled py-1">
                             <a class="text-decoration-none text-dark font-weight-bold d-flex align-items-center py-2 px-3 Main_row_col-3_CateNav_a"
                                 href="{{ route('product.index') }}">
@@ -114,10 +119,10 @@
                                     <i class="fas fa-user mr-2"></i>
                                     <p class="m-0 font-small">Profile</p>
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                {{-- <a class="dropdown-item d-flex align-items-center" href="#">
                                     <i class="fas fa-cog mr-2"></i>
                                     <p class="m-0 font-small">Settings</p>
-                                </a>
+                                </a> --}}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
                                     <i class="fas fa-key mr-2"></i>
