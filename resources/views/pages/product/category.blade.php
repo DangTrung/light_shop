@@ -35,7 +35,7 @@
                     <a class="text-decoration-none" href="{{route('home.proddetail', $item->prod_id)}}">
                         <h5 class="m-0 text-lightpurple text-uppercase font-weight-bold">{{$item->prod_name}}</h5>
                     </a>
-                    <p class="m-0 text-secondary font-italic">$&nbsp{{number_format($item->prod_price,2)}}</p>
+                    <p class="m-0 text-success font-weight-bold">$&nbsp{{number_format($item->prod_price,2)}}</p>
                 </div>
             </div>
             @endforeach

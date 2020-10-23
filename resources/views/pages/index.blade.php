@@ -39,10 +39,17 @@
 
             @foreach ($prod_feat as $item)
             <div class="col-md-4 my-5 Products_row_col-4">
+                @if ($item->prod_quantity > 0)
                 <div class="badge Products_row_col-4_badge d-flex flex-column align-items-center bg-cream">
                     <small class="font-weight-bold text-black d-flex flex-wrap text-white">FEATURED</small>
                     <small class="font-weight-bold text-black d-flex flex-wrap text-white">PRODUCT</small>
+                </div> 
+                @else
+                <div class="badge Products_row_col-4_badge d-flex flex-column align-items-center bg-danger">
+                    <small class="font-weight-bold text-black d-flex flex-wrap text-white">OUT OF</small>
+                    <small class="font-weight-bold text-black d-flex flex-wrap text-white">STOCK</small>
                 </div>
+                @endif
                 <div class="product-top Products_row_col-4_product-top text-center">
                     <img class="img Products_row_col-4_product-top_img"
                         src="{{ asset('/storage/'.$item->prod_image) }}">
@@ -57,13 +64,9 @@
                         </a>
                         
                         @if ($item->prod_quantity > 0)
-                        <a class="btn btn-lightpurple my-2 rounded-0" href="{{ route('cart.add', $item->prod_id) }}">
+                        <a class="btn btn-lightpurple my-2 rounded-0" href="{{ route('cart.quickadd', $item->prod_id) }}">
                             <i class="fas fa-shopping-bag"></i>
-                        </a>    
-                        @else
-                        <a class="btn btn-lightpurple my-2 rounded-0 d-none" href="{{ route('cart.add', $item->prod_id) }}">
-                            <i class="fas fa-shopping-bag"></i>
-                        </a>     
+                        </a>  
                         @endif
                     </div>
                 </div>
@@ -95,6 +98,12 @@
 
             @foreach ($prod as $item)
             <div class="col-md-4 my-5 Products_row_col-4">
+                @if ($item->prod_quantity < 1)
+                <div class="badge Products_row_col-4_badge d-flex flex-column align-items-center bg-danger">
+                    <small class="font-weight-bold text-black d-flex flex-wrap text-white">OUT OF</small>
+                    <small class="font-weight-bold text-black d-flex flex-wrap text-white">STOCK</small>
+                </div>
+                @endif
                 <div class="product-top Products_row_col-4_product-top text-center">
                     <img class="img Products_row_col-4_product-top_img"
                         src="{{ asset('/storage/'.$item->prod_image) }}">

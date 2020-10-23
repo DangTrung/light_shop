@@ -81,6 +81,14 @@
                         </li>
                         <li class="list-unstyled py-1">
                             <a class="text-decoration-none text-dark font-weight-bold d-flex align-items-center py-2 px-3 Main_row_col-3_CateNav_a"
+                                href="{{ route('order.index') }}">
+                                <i
+                                    class="fas fa-receipt mr-2 Main_row_col-3_CateNav_a_i text-center text-dark"></i>
+                                <p class="m-0 Main_row_col-3_CateNav_a_p">ORDERS</p>
+                            </a>
+                        </li>
+                        <li class="list-unstyled py-1">
+                            <a class="text-decoration-none text-dark font-weight-bold d-flex align-items-center py-2 px-3 Main_row_col-3_CateNav_a"
                                 href="{{ route('home') }}">
                                 <i class="fas fa-home mr-2 Main_row_col-3_CateNav_a_i text-center text-only"></i>
                                 <p class="m-0 Main_row_col-3_CateNav_a_p">HOMEPAGE</p>

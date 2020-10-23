@@ -21,8 +21,19 @@ Route::group(['prefix' => 'product'], function () {
 });
 Route::group(['prefix' => 'cart'], function () {
     Route::get('/', 'CartController@show')->name('cart.show');
-    Route::get('/add/{id}', 'CartController@add')->name('cart.add');
-    Route::get('/{id}', 'CartController@delete')->name('cart.delete');
+    Route::post('/update', 'CartController@update')->name('cart.update');
+    Route::get('/add/{id}', 'CartController@quick_add')->name('cart.quickadd');
+    Route::post('/add/{id}', 'CartController@add')->name('cart.add');
+    Route::get('/{rowId}', 'CartController@delete')->name('cart.delete');
+});
+Route::group(['prefix' => 'checkout', 'middleware' => 'CheckLogedIn'], function () {
+    Route::get('/', 'LoginController@getLogin')->name('getLogin');
+    Route::post('/', 'LoginController@postLogin')->name('postLogin');
+});
+Route::group(['prefix' => 'checkout', 'middleware' => 'CheckLogedOut'], function () {
+    Route::get('/', 'CheckoutController@index')->name('checkout.index');
+    Route::get('/alert', 'CheckoutController@alert')->name('checkout.alert');
+    Route::post('/', 'CheckoutController@add')->name('checkout.add');
 });
 
 // ADMIN
@@ -95,6 +106,11 @@ Route::group(['namespace' => 'Admin'], function () {
             Route::post('/{id}', 'ArticleController@update')->name('article.update');
             Route::delete('/{id}', 'ArticleController@delete')->name('article.delete');
             Route::get('/{id}', 'ArticleController@edit')->name('article.edit');
+        });
+
+        // ORDER
+        Route::group(['prefix' => 'order'], function () {
+            Route::get('/', 'OrderController@index')->name('order.index');
         });
     });
 });

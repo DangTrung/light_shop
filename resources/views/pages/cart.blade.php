@@ -31,8 +31,7 @@
                     @foreach ($cart as $item)
                     <tr>
                         <th>
-                            <a class="text-danger text-decoration-none"
-                                href="{{ route('cart.delete', $item->rowId) }}">
+                            <a class="text-danger text-decoration-none" href="{{ route('cart.delete', $item->rowId) }}">
                                 <i class="fas fa-times-circle"></i>
                             </a>
                         </th>
@@ -60,14 +59,23 @@
                                 <?php
                                     $money = $item->price*(100-$item->options->discount)/100;
                                 ?>
-                                <span
-                                    class="text-success font-weight-bold">$&nbsp</span>{{number_format($money, 2)}}
+                                <span class="text-success font-weight-bold">$&nbsp</span>{{number_format($money, 2)}}
                                 @endif
                             </h5>
                         </td>
                         <td>
-                            <input type="number" step="1" min="0" max="100" size="3"
-                                class="text-only text-center font-weight-bold" value="{{$item->qty}}">
+                            <form action="{{ route('cart.update') }}" method="POST"
+                                class="d-flex justify-content-center align-items-center">
+                                @csrf
+                                <input type="number" step="1" min="1" max="100" size="3" name="quantity"
+                                    class="text-only text-center font-weight-bold py-1" value="{{$item->qty}}">
+                                <input type="hidden" name="rowId" value="{{$item->rowId}}">
+                                <button
+                                    class="btn btn-warning rounded-0 font-weight-bold ml-1 animate__animated animate__fadeInRight">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </form>
+
                         </td>
                         <td class="text-success font-weight-bold">
                             <h5>
@@ -92,8 +100,9 @@
             <hr class="border">
         </div>
 
-        <div class="col-12 text-right justify-content-between">
-            <a class="btn btn-secondary mr-3 rounded-0 font-weight-bold animate__animated animate__fadeInLeftBig"
+        <div class="col-12 text-right justify-content-between d-flex justify-content-between ml-3">
+
+            <a class="btn btn-secondary mr-3 rounded-0 font-weight-bold animate__animated animate__fadeInLeft"
                 href="{{route('home')}}">
                 CONTINUE SHOPPING
             </a>
@@ -117,7 +126,7 @@
                 <h5 class="m-0 text-secondary font-weight-bold">TOTAL</h5>
                 <h5 class="m-0 text-success font-weight-bold">$&nbsp{{ $total }}</h5>
             </div>
-            <a class="btn btn-block btn-lightpurple mt-3 font-weight-bold rounded-0" href="">
+            <a class="btn btn-block btn-lightpurple mt-3 font-weight-bold rounded-0" href="{{ route('checkout.index') }}">
                 PROCEED TO CHECKOUT
             </a>
         </div>

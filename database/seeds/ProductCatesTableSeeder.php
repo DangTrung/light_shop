@@ -13,13 +13,16 @@ class ProductCatesTableSeeder extends Seeder
     public function run()
     {
         ProductCate::create([
-            'cate_name'=>'GOAT'
+            'cate_name'=>'LUCKY GOAT'
         ]);
         ProductCate::create([
             'cate_name'=>"PEET'S"
         ]);
         ProductCate::create([
             'cate_name'=>'METROPOLIS'
+        ]);
+        ProductCate::create([
+            'cate_name'=>'GOAT'
         ]);
     }
 }

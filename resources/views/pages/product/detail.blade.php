@@ -23,20 +23,26 @@
                 </div>
                 @endif
                 @if ($prod->prod_quantity > 0)
-                <h6 class="font-weight-bold text-uppercase">status: 
+                <h6 class="font-weight-bold text-uppercase">status:
                     <span class="text-primary">Available</span>
                 </h6>
-                <input type="number" name="qty" value="1" step="1" min="1" max="" size="5"
-                    class="text-only text-center bg-none p-2 font-weight-bold">
-                <a class="btn btn-lightpurple py-2 rounded-0 font-weight-bold ml-3"
-                    href="{{ route('cart.add', $prod->prod_id) }}">
-                    ADD TO CART
-                </a>  
+                <h6 class="price font-weight-bold text-uppercase">Quantity: 
+                    <span class="text-primary">{{ $prod->prod_quantity }} products</span>
+                </h6>
+                <form action="{{ route('cart.add', $prod->prod_id) }}" method="POST">
+                    @csrf
+                    <input type="number" name="qty" value="1" step="1" min="1" max="{{$prod->prod_quantity}}" size="5"
+                        class="text-only text-center bg-none p-2 font-weight-bold">
+                    <button type="submit" class="btn btn-lightpurple py-2 rounded-0 font-weight-bold ml-3">
+                        ADD TO CART
+                    </button>
+                </form>
                 @else
-                <h6 class="font-weight-bold text-uppercase">status: 
+                <h6 class="font-weight-bold text-uppercase">status:
                     <span class="text-danger">Out of stock</span>
                 </h6>
-                @endif 
+                @endif
+                
                 <p class="description text-danger mt-5">
                     {!! $prod->prod_description !!}
                 </p>
