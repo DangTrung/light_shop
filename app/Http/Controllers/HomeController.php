@@ -26,6 +26,10 @@ class HomeController extends Controller
         return view('pages.contact');
     }
 
+    public function error() {
+        return view('pages.404');
+    }
+
     public function detail($id) {
         $prod = Product::find($id);
         $prod_rela = Product::where('prod_cate', '=', $prod->prod_cate)->orderBy(DB::raw('RAND()'))->take(3)->get();

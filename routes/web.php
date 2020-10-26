@@ -15,6 +15,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('home.about');
 Route::get('/contact', 'HomeController@contact')->name('home.contact');
+Route::get('/404', 'HomeController@error')->name('home.error');
 Route::group(['prefix' => 'product'], function () {
     Route::get('/detail/{id}', 'HomeController@detail')->name('home.proddetail');
     Route::get('/category/{id}/{name}', 'HomeController@category')->name('home.prodcategory');

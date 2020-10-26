@@ -115,7 +115,7 @@
                             <h6 class="m-0 text-only text-center font-weight-bold">x {{$item->qty}}</h6>
                         </td>
                         <td class="text-success font-weight-bold">
-                            <h6>
+                            <h6 class="text-success font-weight-bold">
                                 @if ($item->options->discount == 0)
                                 $&nbsp{{number_format($item->price*$item->qty, 2)}}
                                 @else
@@ -155,8 +155,8 @@
 <div class="container Content">
     <div class="row mb-5">
         <div class="col-12 animate__animated animate__fadeInLeft text-center">
-            <img src="frontend/img/empty-cart.png" width="50%">
-            <h3 class="text-only font-weight-bold text-uppercase">Your cart is empty</h3>
+            <img src="frontend/img/4-03.png" width="30%">
+            <h3 class="text-only font-weight-bold text-uppercase">Your cannot checkout when your cart is empty</h3>
         </div>
     </div>
 </div>

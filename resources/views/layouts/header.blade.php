@@ -59,34 +59,34 @@
                 </li>
                 @if (Route::has('getLogin'))
                 @auth
-                    @if (Auth::user()->role == 1 || Auth::user()->role == 2)
-                    <li class="list-unstyled">
-                        <a class="d-flex align-items-center text-decoration-none text-lightpurple"
-                            href="{{ route('dashboard') }}">
-                            <i class="fas fa-chart-line mr-2"></i>
-                            <small class="m-0 text-lightpurple">DASHBOARD</small>
+                @if (Auth::user()->role == 1 || Auth::user()->role == 2)
+                <li class="list-unstyled">
+                    <a class="d-flex align-items-center text-decoration-none text-lightpurple"
+                        href="{{ route('dashboard') }}">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        <small class="m-0 text-lightpurple">DASHBOARD</small>
+                    </a>
+                </li>
+                @else
+                <li class="list-unstyled dropdown">
+                    <a class="d-flex align-items-center text-decoration-none text-lightpurple cursor"
+                        id="dropdownMenuButton" data-toggle="dropdown">
+                        <i class="fas fa-user mr-2 text-lightpurple"></i>
+                        <small class="m-0 text-lightpurple">ACCOUNT</small>
+                    </a>
+                    <div class="dropdown-menu mt-3" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item d-flex align-items-center py-2" href="#">
+                            <i class="fas fa-history mr-2"></i>
+                            <p class="m-0 font-small">History</p>
                         </a>
-                    </li>
-                    @else
-                    <li class="list-unstyled dropdown">
-                        <a class="d-flex align-items-center text-decoration-none text-lightpurple cursor"
-                            id="dropdownMenuButton" data-toggle="dropdown">
-                            <i class="fas fa-user mr-2 text-lightpurple"></i>
-                            <small class="m-0 text-lightpurple">ACCOUNT</small>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
+                            <i class="fas fa-key mr-2"></i>
+                            <p class="m-0 font-small">Log out</p>
                         </a>
-                        <div class="dropdown-menu mt-3" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item d-flex align-items-center py-2" href="#">
-                                <i class="fas fa-history mr-2"></i>
-                                <p class="m-0 font-small">History</p>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
-                                <i class="fas fa-key mr-2"></i>
-                                <p class="m-0 font-small">Log out</p>
-                            </a>
-                        </div>
-                    </li>
-                    @endif
+                    </div>
+                </li>
+                @endif
                 @else
                 <li class="list-unstyled">
                     <a class="d-flex align-items-center text-decoration-none text-lightpurple"
@@ -157,7 +157,7 @@
                     </a>
                 </li>
                 <li class="list-unstyled">
-                    <a class="text-decoration-none text-lightpurple" href="">
+                    <a class="text-decoration-none text-lightpurple" href="{{ route('home.error') }}">
                         404
                     </a>
                 </li>
