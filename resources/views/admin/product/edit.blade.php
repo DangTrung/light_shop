@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label class="text-uppercase font-weight-bold">price</label>
-                <input type="number" class="form-control" name="price" min="0" value="{{$prod->prod_price}}" required>
+                <input type="text" class="form-control" name="price" min="0" value="{{$prod->prod_price}}" required>
             </div>
             <div class="form-group">
                 <label class="text-uppercase font-weight-bold">image</label>

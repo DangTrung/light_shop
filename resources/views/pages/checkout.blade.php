@@ -14,6 +14,7 @@
     </div>
 </div>
 
+@if (Cart::count() >= 1)
 <div class="container">
     <div class="row mt-4">
         <div class="col-4 animate__animated animate__fadeInUp">
@@ -80,7 +81,54 @@
                         <th scope="col">TOTAL</th>
                     </tr>
                 </thead>
-
+                <tbody class="text-center">
+                    @foreach ($cart as $item)
+                    <tr>
+                        <td>
+                            <div class="product d-flex">
+                                <div class="img Content_row_col-12_table_product_img">
+                                    <img class="pic Content_row_col-12_table_product_img_pic"
+                                        src="{{ asset('/storage/'.$item->options->image) }}">
+                                </div>
+                                <div class="info Content_row_col-12_table_product_info ml-2">
+                                    <a class="m-0 text-decoration-none"
+                                        href="{{ route('home.proddetail', $item->id) }}">
+                                        <h6 class="text-lightpurple font-weight-bold text-uppercase">{{$item->name}}
+                                        </h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-success font-weight-bold">
+                            <h6 class="text-success font-weight-bold">
+                                @if ($item->options->discount == 0)
+                                $&nbsp{{number_format($item->price, 2)}}
+                                @else
+                                <?php
+                                    $money = $item->price*(100-$item->options->discount)/100;
+                                ?>
+                                $&nbsp{{number_format($money, 2)}}
+                                @endif
+                                </h5>
+                        </td>
+                        <td>
+                            <h6 class="m-0 text-only text-center font-weight-bold">x {{$item->qty}}</h6>
+                        </td>
+                        <td class="text-success font-weight-bold">
+                            <h6>
+                                @if ($item->options->discount == 0)
+                                $&nbsp{{number_format($item->price*$item->qty, 2)}}
+                                @else
+                                <?php
+                                    $money = $item->price*(100-$item->options->discount)/100;
+                                ?>
+                                $&nbsp{{number_format($money*$item->qty, 2)}}
+                                @endif
+                            </h6>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
 
             <div class="d-flex justify-content-center">
@@ -103,5 +151,14 @@
         </div>
     </div>
 </div>
+@else
+<div class="container Content">
+    <div class="row mb-5">
+        <div class="col-12 animate__animated animate__fadeInLeft text-center">
+            <img src="frontend/img/empty-cart.png" width="50%">
+            <h3 class="text-only font-weight-bold text-uppercase">Your cart is empty</h3>
+        </div>
+    </div>
 </div>
+@endif
 @endsection

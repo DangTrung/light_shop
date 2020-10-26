@@ -67,11 +67,11 @@
                             <form action="{{ route('cart.update') }}" method="POST"
                                 class="d-flex justify-content-center align-items-center">
                                 @csrf
-                                <input type="number" step="1" min="1" max="100" size="3" name="quantity"
+                                <input type="number" step="1" min="1" max="{{$item->options->maxQty}}" size="3" name="quantity"
                                     class="text-only text-center font-weight-bold py-1" value="{{$item->qty}}">
                                 <input type="hidden" name="rowId" value="{{$item->rowId}}">
                                 <button
-                                    class="btn btn-warning rounded-0 font-weight-bold ml-1 animate__animated animate__fadeInRight">
+                                    class="btn btn-lightpurple rounded-0 font-weight-bold ml-1 animate__animated animate__fadeInRight">
                                     <i class="fas fa-check"></i>
                                 </button>
                             </form>
