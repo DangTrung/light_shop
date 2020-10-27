@@ -13,4 +13,8 @@ class Product extends Model
     public function products_cate() {
         return $this->belongsTo('App\ProductCate', 'prod_cate', 'cate_id');
     }
+
+    public function order_detail() {
+        return $this->hasMany('App\OrderDetail', 'detail_prod', 'prod_id');
+    }
 }

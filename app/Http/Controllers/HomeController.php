@@ -45,4 +45,13 @@ class HomeController extends Controller
 
         return view('pages.product.category', compact('cate_name', 'prod_count', 'prod_cate', 'products'));
     }
+
+    public function search(Request $request) {
+        $prod_cate = ProductCate::all();
+        $keyword = $request->result;
+
+        $prod = Product::where('prod_name', 'like', '%'.$keyword.'%')->get();
+        $count = Product::where('prod_name', 'like', '%'.$keyword.'%')->count();
+        return view('pages.search', compact('prod_cate' ,'keyword', 'prod', 'count'));
+    }
 }

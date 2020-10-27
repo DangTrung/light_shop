@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Article;
 use App\ArticleCate;
 use App\Http\Controllers\Controller;
+use App\Order;
 use App\Product;
 use App\ProductCate;
 use App\User;
@@ -18,7 +19,8 @@ class DashboardController extends Controller
         $article = Article::count('art_id');
         $category = ProductCate::count('cate_id') + ArticleCate::count('cate_id');
         $user = User::count('id');
-        return view('admin.index', compact('product', 'article', 'category', 'user'));
+        $order = Order::count('order_id');
+        return view('admin.index', compact('product', 'article', 'category', 'user', 'order'));
     }
 
     public function logout() {

@@ -52,6 +52,22 @@
 
     <div class="col-3 mb-3">
         <div class="items d-flex align-items-center border">
+            <div class="icon p-4 bg-dark">
+                <i class="fas fa-receipt fa-3x px-1 text-light"></i>
+            </div>
+            <div class="info ml-2">
+                <div class="number">
+                    <h2 class="m-0 font-weight-bold">{{ $order }}</h2>
+                </div>
+                <div class="text">
+                    <p class="m-0">Orders</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3 mb-3">
+        <div class="items d-flex align-items-center border">
             <div class="icon p-4 bg-danger">
                 <i class="fas fa-certificate fa-3x"></i>
             </div>
