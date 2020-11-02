@@ -26,6 +26,24 @@
     <script src="frontend/js/jquery-3.5.1.slim.min.js"></script>
     <script src="frontend/js/popper.min.js"></script>
     <script src="frontend/js/bootstrap.min.js"></script>
+
+    <script>
+        function changeImg(input){ 
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#avatar').attr('src',e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+      
+        $(document).ready(function() {
+            $('#avatar').click(function(){
+                $('#img').click();
+            });
+        });     
+    </script>
 </body>
 
 </html>

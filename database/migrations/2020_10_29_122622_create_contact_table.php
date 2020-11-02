@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeedbacksTable extends Migration
+class CreateContactTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateFeedbacksTable extends Migration
      */
     public function up()
     {
-        Schema::create('feedbacks', function (Blueprint $table) {
-            $table->Increments('feedback_id');
-            $table->text('feedback_content');
+        Schema::create('contact', function (Blueprint $table) {
+            $table->Increments('cont_id');
+            $table->string('cont_name');
+            $table->string('cont_email');
+            $table->text('cont_description');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateFeedbacksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feedbacks');
+        Schema::dropIfExists('contact');
     }
 }

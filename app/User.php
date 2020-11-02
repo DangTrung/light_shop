@@ -17,4 +17,8 @@ class User extends Authenticatable
     public function order() {
         return $this->hasMany('App\Order', 'order_user', 'user_id');
     }
+
+    public function comment() {
+        return $this->hasMany('App\Comment', 'cmt_user', 'id');
+    }
 }

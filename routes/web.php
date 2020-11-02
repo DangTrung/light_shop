@@ -14,9 +14,23 @@
 // HOMEPAGE
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('home.about');
-Route::get('/contact', 'HomeController@contact')->name('home.contact');
 Route::get('/404', 'HomeController@error')->name('home.error');
 Route::get('/search', 'HomeController@search')->name('home.search');
+Route::get('/filter', 'HomeController@filter')->name('home.filter');
+Route::post('/comment', 'HomeController@comment')->name('home.comment');
+Route::group(['prefix' => 'history'], function () {
+    Route::get('/', 'HomeController@history')->name('history.index');
+    Route::get('/{id}', 'HomeController@history_show')->name('history.show');
+});
+Route::group(['prefix' => 'contact'], function () {
+    Route::get('/', 'HomeController@contact')->name('contact.index');
+    Route::post('/add', 'HomeController@contact_add')->name('contact.add');
+});
+Route::group(['prefix' => 'account'], function () {
+    Route::get('/', 'HomeController@account')->name('account.index');
+    Route::get('/{id}', 'HomeController@account_edit')->name('account.edit');
+    Route::post('/{id}', 'HomeController@account_update')->name('account.update');
+});
 Route::group(['prefix' => 'product'], function () {
     Route::get('/detail/{id}', 'HomeController@detail')->name('home.proddetail');
     Route::get('/category/{id}/{name}', 'HomeController@category')->name('home.prodcategory');

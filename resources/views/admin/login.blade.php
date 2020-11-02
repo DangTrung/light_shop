@@ -8,6 +8,7 @@
     <link href="frontend/css/bootstrap.min.css" rel="stylesheet">
     <link href="frontend/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap">
+    <link rel="stylesheet" href="frontend/css/animate/animate.min.css">
     <title>Login</title>
 
 </head>
@@ -16,7 +17,7 @@
 
     <div class="container">
         <div class="row vh-100">
-            <div class="col-md-4 col-6 bg-dark m-auto py-5">
+            <div class="col-md-4 col-6 bg-dark m-auto py-5 animate__animated animate__fadeInDown">
                 <h1 class="text-center text-only font-weight-bold mb-3">LOGIN</h1>
                 @include('error.note')
                 @if (session('success'))

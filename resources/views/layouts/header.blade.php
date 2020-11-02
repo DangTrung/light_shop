@@ -72,10 +72,14 @@
                     <a class="d-flex align-items-center text-decoration-none text-lightpurple cursor"
                         id="dropdownMenuButton" data-toggle="dropdown">
                         <i class="fas fa-user mr-2 text-lightpurple"></i>
-                        <small class="m-0 text-lightpurple">ACCOUNT</small>
+                        <small class="m-0 text-lightpurple text-uppercase">{{ Auth::user()->name }}</small>
                     </a>
                     <div class="dropdown-menu mt-3" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item d-flex align-items-center py-2" href="#">
+                        <a class="dropdown-item d-flex align-items-center py-2" href="{{ route('account.index') }}">
+                            <i class="fas fa-user mr-2"></i>
+                            <p class="m-0 font-small">Account</p>
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center py-2" href="{{ route('history.index') }}">
                             <i class="fas fa-history mr-2"></i>
                             <p class="m-0 font-small">History</p>
                         </a>
@@ -152,7 +156,7 @@
                     </a>
                 </li>
                 <li class="list-unstyled">
-                    <a class="text-decoration-none text-lightpurple" href="{{ route('home.contact') }}">
+                    <a class="text-decoration-none text-lightpurple" href="{{ route('contact.index') }}">
                         CONTACT US
                     </a>
                 </li>

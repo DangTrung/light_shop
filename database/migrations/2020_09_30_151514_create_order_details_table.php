@@ -15,7 +15,7 @@ class CreateOrderDetailsTable extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->Increments('detail_id');
-            $table->integer('detail_price');
+            $table->decimal('detail_price', 8, 2);
             $table->integer('detail_quantity');
             $table->unsignedInteger('detail_prod');
             $table->foreign('detail_prod')

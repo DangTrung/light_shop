@@ -30,6 +30,8 @@
                 <!-- Category Navbar -->
                 <div class="col-12 CateNav p-0">
                     <ul class="m-0 p-0" id="side-menu">
+                        @auth
+                        @if (Auth::user()->role == 1)
                         <li class="list-unstyled py-1">
                             <a class="text-decoration-none text-dark font-weight-bold d-flex align-items-center py-2 px-3 Main_row_col-3_CateNav_a"
                                 href="{{ route('user.index') }}">
@@ -37,8 +39,6 @@
                                 <p class="m-0 Main_row_col-3_CateNav_a_p">USERS</p>
                             </a>
                         </li>
-                        @auth
-                        @if (Auth::user()->role == 1)
                         <li class="list-unstyled py-1">
                             <a class="text-decoration-none text-dark font-weight-bold d-flex align-items-center py-2 px-3 Main_row_col-3_CateNav_a"
                                 data-toggle="collapse" href="#collapseExample" role="button">
@@ -59,9 +59,7 @@
                                     <p class="m-0 Main_row_col-3_CateNav_a_p">ARTICLE</p>
                                 </a>
                             </div>
-                        </li>    
-                        @else
-   
+                        </li>
                         @endif
                         @endauth
                         <li class="list-unstyled py-1">
